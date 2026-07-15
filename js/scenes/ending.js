@@ -99,6 +99,8 @@ function showBirthdayReveal(){
 
 <div class="birthday-glow"></div>
 
+<canvas id="fireworksCanvas"></canvas>
+
 <h2>
 
 MISSION SUCCESSFUL
@@ -201,11 +203,190 @@ i++;
 },900);
 
 }
+
 function launchCelebration(){
 
     document.body.classList.add("celebration-mode");
 
     createConfetti();
+
+    createHearts();
+
+    createBalloons();
+
+    startFireworks();
+
+}
+
+function createHearts(){
+
+    const emojis=["💙","❤️","💜","✨"];
+
+    for(let i=0;i<35;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML=emojis[
+            Math.floor(Math.random()*emojis.length)
+        ];
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.animationDelay=(Math.random()*5)+"s";
+
+        heart.style.animationDuration=(6+Math.random()*3)+"s";
+
+        document.body.appendChild(heart);
+
+    }
+
+}
+
+function createBalloons(){
+
+    const balloonColors=[
+
+        "#00D4FF",
+
+        "#6C63FF",
+
+        "#FFD54F",
+
+        "#FF5E7A",
+
+        "#52FFA8"
+
+    ];
+
+    for(let i=0;i<20;i++){
+
+        const balloon=document.createElement("div");
+
+        balloon.className="balloon";
+
+        balloon.style.left=Math.random()*100+"vw";
+
+        balloon.style.background=
+        balloonColors[
+            Math.floor(Math.random()*balloonColors.length)
+        ];
+
+        balloon.style.animationDelay=(Math.random()*4)+"s";
+
+        balloon.style.animationDuration=(10+Math.random()*4)+"s";
+
+        document.body.appendChild(balloon);
+
+    }
+
+}
+
+/* ==========================================
+   FIREWORKS
+========================================== */
+
+function startFireworks() {
+
+    const canvas = document.getElementById("fireworksCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const fireworks = [];
+
+    class Firework {
+
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = canvas.height;
+            this.targetY = Math.random() * canvas.height * 0.45 + 80;
+
+            this.particles = [];
+
+            this.exploded = false;
+
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        update() {
+
+            if (!this.exploded) {
+
+                this.y -= 7;
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+
+                if (this.y <= this.targetY) {
+
+                    this.exploded = true;
+
+                    for (let i = 0; i < 60; i++) {
+
+                        this.particles.push({
+
+                            x: this.x,
+                            y: this.y,
+
+                            dx: (Math.random() - 0.5) * 8,
+                            dy: (Math.random() - 0.5) * 8,
+
+                            life: 100
+
+                        });
+
+                    }
+
+                }
+
+            } else {
+
+                this.particles.forEach((p) => {
+
+                    p.x += p.dx;
+                    p.y += p.dy;
+
+                    p.dy += 0.03;
+
+                    p.life--;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+
+                });
+
+                this.particles = this.particles.filter(p => p.life > 0);
+
+            }
+
+        }
+
+    }
+
+    function animate() {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        if (Math.random() < 0.05) {
+
+            fireworks.push(new Firework());
+
+        }
+
+        fireworks.forEach(f => f.update());
+
+        requestAnimationFrame(animate);
+
+    }
+
+    animate();
 
 }
 
