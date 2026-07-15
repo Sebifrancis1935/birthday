@@ -112,8 +112,8 @@ function animateBars() {
 
     document.getElementById("nextScene").onclick = () => {
 
-        alert("Timeline Module");
-
+    loadStoryScene();
+    
     };
 
 }
