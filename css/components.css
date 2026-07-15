@@ -1040,3 +1040,64 @@ border-radius:16px;
 line-height:1.8;
 
 }
+/* ============================
+LETTER
+============================ */
+
+.letter-page{
+
+max-width:760px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.letter-page h1{
+
+color:#00D4FF;
+
+}
+
+.letter-sub{
+
+color:#9fb4d8;
+
+}
+
+.letter-card{
+
+background:#1b2335;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:30px;
+
+height:450px;
+
+overflow-y:auto;
+
+scroll-behavior:smooth;
+
+}
+
+.letter-line{
+
+font-size:18px;
+
+line-height:1.8;
+
+margin-bottom:10px;
+
+color:#DCE7FF;
+
+animation:fadeIn .5s;
+
+}
