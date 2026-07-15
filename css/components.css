@@ -674,3 +674,119 @@ height:140px;
     line-height:1.7;
 
 }
+/* ===========================================
+   MISSION ARCHIVE
+=========================================== */
+
+.archive-page{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    animation:fadeIn .6s;
+
+}
+
+.archive-title{
+
+    color:#00D4FF;
+
+    font-size:42px;
+
+    margin:0;
+
+}
+
+.archive-subtitle{
+
+    color:#A5B4CF;
+
+    font-size:18px;
+
+}
+
+.archive-progress{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:600px;
+
+    height:18px;
+
+    background:#30385a;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+#archiveFill{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:0%;
+
+    height:100%;
+
+    background:#00D4FF;
+
+    border-radius:50px;
+
+    transition:width .15s linear;
+
+}
+
+#archivePercent{
+
+    color:#00D4FF;
+
+    font-size:34px;
+
+    margin:0;
+
+}
+
+.archive-complete{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+    animation:fadeIn .8s;
+
+}
+
+.archive-complete h2{
+
+    color:#52FFA8;
+
+}
+
+.archive-complete p{
+
+    color:#DCE7FF;
+
+}

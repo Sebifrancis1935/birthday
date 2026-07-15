@@ -83,7 +83,7 @@ function typeStory(lines){
 
         if(i>=lines.length){
 
-            const btn=document.createElement("button");
+            showMissionArchiveLoader();
 
             btn.className="primary-btn";
 
@@ -140,5 +140,95 @@ function typeStory(lines){
     }
 
     next();
+
+}
+
+function showMissionArchiveLoader() {
+
+    const output = document.getElementById("output");
+
+    output.innerHTML = `
+
+    <div class="archive-page">
+
+        <h1 class="archive-title">
+            🔐 Mission Archive
+        </h1>
+
+        <p class="archive-subtitle">
+            Scanning Mission Archive...
+        </p>
+
+        <div class="archive-progress">
+
+            <div id="archiveFill"></div>
+
+        </div>
+
+        <h2 id="archivePercent">0%</h2>
+
+        <div id="archiveStatus"></div>
+
+    </div>
+
+    `;
+
+    animateArchive();
+
+}
+function animateArchive(){
+
+    const fill=document.getElementById("archiveFill");
+    const percent=document.getElementById("archivePercent");
+    const status=document.getElementById("archiveStatus");
+
+    let value=0;
+
+    const timer=setInterval(()=>{
+
+        value++;
+
+        fill.style.width=value+"%";
+        percent.innerHTML=value+"%";
+
+        if(value>=100){
+
+            clearInterval(timer);
+
+            setTimeout(()=>{
+
+                status.innerHTML=`
+
+                <div class="archive-complete">
+
+                    <h2>✅ 5 Memories Found</h2>
+
+                    <p>Archive Ready</p>
+
+                    <button
+                        id="openArchive"
+                        class="primary-btn">
+
+                        🔓 OPEN MISSION ARCHIVE
+
+                    </button>
+
+                </div>
+
+                `;
+
+                document
+                .getElementById("openArchive")
+                .onclick=()=>{
+
+                    loadTimelineScene();
+
+                };
+
+            },400);
+
+        }
+
+    },18);
 
 }
