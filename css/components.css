@@ -790,3 +790,253 @@ height:140px;
     color:#DCE7FF;
 
 }
+/* =====================================
+   AWARDS
+===================================== */
+
+.awards{
+
+    width:100%;
+
+}
+
+.awards-header{
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.awards-header h1{
+
+    color:#00D4FF;
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.awards-header p{
+
+    color:#AFC4E8;
+
+    font-size:16px;
+
+}
+
+#awardContainer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.award-card{
+
+    width:100%;
+
+    background:#1A2233;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:15px;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.5s;
+
+}
+
+.award-card.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.award-icon{
+
+    font-size:60px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 20px auto;
+
+    animation:float 2s ease-in-out infinite;
+
+}
+
+.award-card h2{
+
+    margin:0;
+
+    color:#00D4FF;
+
+    font-size:32px;
+
+}
+
+.award-card p{
+
+    margin:0;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+    color:#DCE7FF;
+
+    max-width:600px;
+
+}
+/* ===================================
+QUIZ
+=================================== */
+
+.quiz-page{
+
+max-width:700px;
+
+margin:auto;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.quiz-page h1{
+
+color:#00D4FF;
+
+}
+
+.quiz-sub{
+
+color:#9fb4d8;
+
+}
+
+.quiz-card{
+
+background:#1b2335;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:16px;
+
+padding:25px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.question{
+
+font-size:22px;
+
+color:white;
+
+}
+
+.options{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:15px;
+
+}
+
+.option-btn{
+
+padding:15px;
+
+background:#27324b;
+
+border:none;
+
+border-radius:12px;
+
+color:white;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.25s;
+
+}
+
+.option-btn:hover{
+
+background:#00D4FF;
+
+color:#06111f;
+
+transform:translateY(-2px);
+
+}
+
+.quiz-result{
+
+display:flex;
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+.quiz-result h1{
+
+color:#00D4FF;
+
+}
+
+.result-box{
+
+background:#1b2335;
+
+padding:25px;
+
+border-radius:16px;
+
+line-height:1.8;
+
+}

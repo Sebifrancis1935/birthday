@@ -1,0 +1,40 @@
+/* ==========================================
+   GLOBAL SCENE LAYOUT
+========================================== */
+
+.scene {
+
+    width: 100%;
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: stretch;
+
+    gap: 18px;
+
+    box-sizing: border-box;
+
+    animation: fadeIn .5s;
+}
+
+.scene h1,
+.scene h2,
+.scene h3,
+.scene p{
+
+    margin:0;
+
+}
+
+.scene button{
+
+    align-self:center;
+
+}

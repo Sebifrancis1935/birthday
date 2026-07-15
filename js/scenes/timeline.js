@@ -64,9 +64,9 @@ function loadTimelineScene(){
 
     document.getElementById("timelineNext").onclick=()=>{
 
-        alert("Module 7 - Awards");
-
-    };
+    loadAwardsScene();
+    
+};
 
 }
 
