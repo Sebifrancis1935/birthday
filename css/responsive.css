@@ -1,0 +1,40 @@
+@media(max-width:768px){
+
+.terminal{
+    width:95vw;
+    height:85vh;
+}
+
+.terminal-body{
+    padding:18px;
+}
+
+.dashboard-title{
+    font-size:24px;
+}
+
+.status-panel{
+    grid-template-columns:1fr;
+}
+
+.status-item{
+    padding:14px;
+}
+
+.status-item p{
+    font-size:16px;
+}
+
+.mission-card{
+    padding:15px;
+}
+
+.mission-card p{
+    font-size:14px;
+}
+
+#startMission{
+    padding:14px;
+}
+
+}

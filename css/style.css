@@ -1,0 +1,268 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    overflow:hidden;
+    position:relative;
+}
+
+/* ==========================
+   Animated Stars
+========================== */
+
+#stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(circle,#ffffff 1px,transparent 1px),
+        radial-gradient(circle,#ffffff 1px,transparent 1px),
+        radial-gradient(circle,#ffffff 1px,transparent 1px);
+    background-size:
+        220px 220px,
+        330px 330px,
+        500px 500px;
+    opacity:.28;
+    animation:moveStars 120s linear infinite;
+}
+
+/* ==========================
+   Background Glow
+========================== */
+
+.gradient{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top,#18285c 0%,transparent 45%),
+    radial-gradient(circle at bottom,#06102e 0%,transparent 40%);
+    opacity:.8;
+}
+
+/* ==========================
+   Main Layout
+========================== */
+
+.container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+
+    position:relative;
+    z-index:10;
+}
+
+/* ==========================
+   Terminal
+========================== */
+
+.terminal{
+
+width:min(900px,95vw);
+
+height:min(700px,85vh);
+
+background:rgba(17,24,39,.82);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(18px);
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/* ==========================
+   Header
+========================== */
+
+.titlebar{
+
+    height:65px;
+
+    display:flex;
+
+    align-items:center;
+
+    padding:0 25px;
+
+    background:#0d1427;
+
+    border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+.buttons span{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+}
+
+.red{
+
+    background:#ff5f56;
+
+}
+
+.yellow{
+
+    background:#ffbd2e;
+
+}
+
+.green{
+
+    background:#27c93f;
+
+}
+
+.titlebar h2{
+
+    margin-left:20px;
+
+    font-size:20px;
+
+    color:var(--secondary);
+
+    letter-spacing:2px;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+/* ==========================
+   Terminal Body
+========================== */
+
+.terminal-body{
+
+    padding:35px;
+
+    flex:1;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    position:relative;
+
+    scroll-behavior:smooth;
+
+}
+
+#output{
+
+    font-family:Consolas,monospace;
+
+    color:var(--terminal);
+
+    font-size:21px;
+
+    line-height:2;
+
+    white-space:pre-line;
+
+}
+
+.cursor{
+
+    width:12px;
+
+    height:24px;
+
+    margin-top:12px;
+
+    background:var(--terminal);
+
+    animation:blink .9s infinite;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.titlebar h2{
+
+font-size:15px;
+
+}
+
+#output{
+/* ==========================
+   Custom Scrollbar
+========================== */
+
+.terminal-body::-webkit-scrollbar{
+
+width:8px;
+
+}
+
+.terminal-body::-webkit-scrollbar-track{
+
+background:#0d1427;
+
+}
+
+.terminal-body::-webkit-scrollbar-thumb{
+
+background:#00D4FF;
+
+border-radius:20px;
+
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover{
+
+background:#6C63FF;
+
+}
+font-size:16px;
+
+}
+
+.terminal-body{
+
+padding:20px;
+
+min-height:420px;
+
+}
+
+}
